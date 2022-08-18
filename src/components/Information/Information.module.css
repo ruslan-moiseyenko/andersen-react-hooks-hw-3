@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #dee8b8;
+  border-radius: 4px;
+  width: 80%;
+  margin-bottom: 10px;
+  align-items: center;
+  font-weight: 600;
+  color: black;
+  padding: 10px;
+}
+
+.errorBorder {
+  /* border: 3px solid red; */
+  background-color: pink;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+  margin-bottom: 10px;
+}

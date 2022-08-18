@@ -1,0 +1,15 @@
+.main {
+  max-width: 100%;
+}
+
+.info_block {
+  border-radius: 4px;
+  border: 2px solid #dee8b8;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.text {
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+}

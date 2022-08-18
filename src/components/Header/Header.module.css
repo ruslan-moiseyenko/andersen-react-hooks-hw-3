@@ -1,0 +1,11 @@
+.form__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.techStack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
