@@ -1,27 +1,24 @@
 // import logo from './logo.svg';
 import styles from './App.module.css';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Info from './components/Information/Information';
 import FilledProfile from './components/FilledProfile/FilledProfile';
 
-class App extends Component {
-  state = {
-    filled: false,
-    data: {}
-  };
-  handleSubmit = (data) => {
-    this.setState((prevState) => ({ ...prevState, filled: true, data: data }));
+export default function App() {
+  const [filled, setFilled] = useState(false);
+  const [data, setData] = useState(null);
+
+  const handleSubmit = (data) => {
+    setData(data);
+    setFilled(true);
   };
 
-  render() {
-    return (
-      <div className={styles.main}>
-        {!this.state.filled && <Header text='Creating a profile' />}
-        {!this.state.filled && <Info onSubmit={this.handleSubmit} />}
-        {this.state.filled && <FilledProfile data={this.state.data} />}
-      </div>
-    );
-  }
+  return (
+    <div className={styles.main}>
+      {!filled && <Header text='Creating a profile' />}
+      {!filled && <Info onSubmit={handleSubmit} />}
+      {filled && <FilledProfile data={data} />}
+    </div>
+  );
 }
-export default App;

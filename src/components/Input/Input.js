@@ -1,21 +1,17 @@
 import React from 'react';
 import styles from './Input.module.css';
 
-class Input extends React.Component {
-  handleChange = (e) => {
-    this.props.onChange(e);
+export default function Input({ onChange, ...props }) {
+  const handleChange = (e) => {
+    onChange(e);
   };
 
-  render() {
-    return (
-      <div className={styles.input}>
-        <label>
-          {this.props.header}
-          <input {...this.props} onChange={this.handleChange} />
-        </label>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.input}>
+      <label>
+        {props.header}
+        <input {...props} onChange={handleChange} />
+      </label>
+    </div>
+  );
 }
-
-export default Input;
